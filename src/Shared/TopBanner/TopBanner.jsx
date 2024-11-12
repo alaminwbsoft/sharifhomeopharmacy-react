@@ -1,10 +1,10 @@
-import React from 'react';
+import topBannerImg from "../../assets/topBannerImg.gif"
 
 const TopBanner = () => {
     return (
-        <div>
-            
-        </div>
+      
+          <img src={topBannerImg} alt="" />
+        
     );
 };
 
