@@ -16,6 +16,14 @@ const Router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/contact",
+        element: <Home />,
+      },
+      {
+        path: "/signIn",
+        element: <Home />,
+      },
+      {
         path: "/medicineCategory",
         element: <MedicineCategoryLayout />,
         children: [
