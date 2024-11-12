@@ -3,9 +3,17 @@ import { Outlet } from "react-router-dom";
 
 function MedicineCategoryLayout() {
   return (
-    <div>
+    <div className="lg:w-[80%] mx-auto lg:flex justify-center">
       {/* ----------------- side bar ------------ */}
-      <div>sidebar </div>
+      <div className="lg:w-30% md:w-full mx-auto">
+        sidebar
+        <div>
+          <button>home icon</button>
+        </div>
+        <div>
+          <button>google icon prefered language</button>
+        </div>
+      </div>
       <div>
         <Outlet />
       </div>
