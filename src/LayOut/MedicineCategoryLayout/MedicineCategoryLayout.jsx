@@ -119,7 +119,7 @@ function MedicineCategoryLayout() {
   ];
 
   return (
-    <div className="lg:w-[80%] mx-auto lg:flex justify-center min-h-screen">
+    <div className="my-5 mx-auto lg:flex justify-center min-h-screen">
       {/* -------------------------------------------------------------------------------- side bar ------------ */}
       <div className="lg:w-[30%] hidden lg:block mx-auto">
         {/* ---- section 1 -------- shows tab */}
