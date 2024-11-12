@@ -80,8 +80,8 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="bg-gray-300 p-4 mt-4 rounded-3xl border text-center">
-          <p className="text-gray-700 text-sm">
+        <div className="bg-gray-300 p-4 mx-5 mt-4 rounded-3xl text-center relative custom-corner-borders">
+          <p className="text-gray-700 text-sm font-semibold">
             Dr. Taleb, an experienced homeopathy doctor & specialized in
             medicine. He has done his BHMS (Bachelor of Homeopathy Medicine &
             Surgery) degree from Dhaka University in the year of 1997 (1st
