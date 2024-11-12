@@ -3,6 +3,7 @@ import LayOut from "../LayOut/LayOut";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import DilutionsAndPotency from "../Pages/Medicine-Category-Dilutions-and-Potencies/DilutionsAndPotency";
+import MedicineCategoryLayout from "../LayOut/MedicineCategoryLayout/MedicineCategoryLayout";
 
 const Router = createBrowserRouter([
   {
@@ -15,8 +16,14 @@ const Router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/dilutions",
-        element: <DilutionsAndPotency />,
+        path: "/medicineCategory",
+        element: <MedicineCategoryLayout />,
+        children: [
+          {
+            path: "/medicineCategory/dilutions",
+            element: <DilutionsAndPotency />,
+          },
+        ],
       },
     ],
   },
