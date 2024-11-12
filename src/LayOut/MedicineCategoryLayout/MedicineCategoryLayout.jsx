@@ -1,5 +1,4 @@
 import React from "react";
-import MedicineCategorySidebar from "../../Shared/MedicineCategorySidebar/MedicineCategorySidebar";
 import { Outlet } from "react-router-dom";
 
 function MedicineCategoryLayout() {
