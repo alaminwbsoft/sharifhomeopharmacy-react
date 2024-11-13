@@ -1,6 +1,5 @@
 
-import Banner from '../../Pages/Banner/Banner';
-import Navbar from '../Navbar/Navbar';
+
 import TopBanner from '../TopBanner/TopBanner';
 import Topbar from '../TopBar/Topbar';
 import TopNav from '../TopNav/TopNav';
@@ -11,8 +10,6 @@ const Header = () => {
             <TopBanner/>
             <Topbar/>
             <TopNav/>
-            <Navbar/>
-            <Banner/>
         </div>
     );
 };
