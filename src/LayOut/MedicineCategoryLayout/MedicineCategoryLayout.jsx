@@ -617,6 +617,8 @@ function MedicineCategoryLayout() {
               ))}
         </div>
 
+        <div>{}</div>
+
         <Outlet />
       </div>
     </div>
