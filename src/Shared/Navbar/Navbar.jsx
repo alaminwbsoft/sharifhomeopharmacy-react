@@ -6,7 +6,7 @@ const Navbar = () => {
   // Define submenu items for each menu
   const menuItems = [
     {
-      title: "ZOHA HOMEO HALL",
+      title: "PRODUCT OF ZOHA HOMEO HALL",
       subcategories: ["About Us", "Our Services", "Contact"],
     },
     {
@@ -66,7 +66,7 @@ const Navbar = () => {
                     {menu.subcategories.map((subItem, subIndex) => (
                       <p
                         key={subIndex}
-                        className="text-gray-700 py-1 px-2 hover:bg-gray-100"
+                        className="text-gray-700 py-1 px-12 hover:bg-gray-100"
                       >
                         {subItem}
                       </p>
