@@ -13,6 +13,10 @@ import SubCategoryCard from "../../Components/ProductCards/SubCategoryCard";
 import GridviewCard from "../../Components/ProductCards/GridviewCard";
 import ListViewCard from "../../Components/ProductCards/ListViewCard";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import Select from "react-select/base";
+import makeAnimated from "react-select/animated";
+
+const animatedComponents = makeAnimated();
 
 function MedicineCategoryLayout() {
   const navigate = useNavigate();
@@ -177,6 +181,12 @@ function MedicineCategoryLayout() {
     { value: "Reference: Lowest First", label: "Reference: Lowest First" },
     { value: "Reference: Highest First", label: "Reference: Highest First" },
   ];
+
+  const [selectedOption, setSelectedOption] = useState("--");
+
+  const handleSelectChange = (selectedOption) => {
+    setSelectedOption(selectedOption);
+  };
 
   return (
     <div className="my-5 mx-auto lg:flex justify-center min-h-screen">
@@ -587,7 +597,12 @@ function MedicineCategoryLayout() {
           <div className="flex justify-between items-center my-8">
             <div>
               <div>
-                <Select options={sortOptions} />
+                <Select
+                  options={data} // Pass options array
+                  components={animatedComponents}
+                  onChange={handleSelectChange} // Handle selection
+                  placeholder={selectedOption}
+                />
               </div>
               <div>show</div>
             </div>
@@ -665,8 +680,6 @@ function MedicineCategoryLayout() {
             ))
           )}
         </div>
-
-        <div>{}</div>
 
         <Outlet />
       </div>
