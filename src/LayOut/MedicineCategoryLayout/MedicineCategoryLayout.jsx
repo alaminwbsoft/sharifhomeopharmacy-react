@@ -38,7 +38,7 @@ function MedicineCategoryLayout() {
       description:
         "Ginkgo Biloba Mother Tincture is a homeopathic formulation that helps to improve the concentration, improves mental alertness, elevates mood and restores energy. It is very effective for improving symptoms of anxiety, cognitive function, dementia, and diabetic retinopathy.",
       KeyIngredients: "Ginkgo Biloba (leaves)",
-      status: "available",
+      status: "stock out",
       price: "450BDT",
     },
     {
@@ -601,20 +601,19 @@ function MedicineCategoryLayout() {
         {/* ----------------------------------------------------------------------------------- main card contents here --------------------- */}
 
         <div>
-          {gridView
-            ? dummyProducts.map((product, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-1 lg:grid-cols-3 gap-4"
-                >
-                  <GridviewCard product={product}></GridviewCard>
-                </div>
-              ))
-            : dummyProducts.map((product, index) => (
-                <div key={index}>
-                  <ListViewCard product={product}></ListViewCard>
-                </div>
+          {gridView ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              {dummyProducts.map((product, index) => (
+                <GridviewCard key={index} product={product}></GridviewCard>
               ))}
+            </div>
+          ) : (
+            dummyProducts.map((product, index) => (
+              <div key={index}>
+                <ListViewCard product={product}></ListViewCard>
+              </div>
+            ))
+          )}
         </div>
 
         <div>{}</div>
