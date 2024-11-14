@@ -1,112 +1,63 @@
-// import { useState } from "react";
-
-// const Navbar = () => {
-//   const [hoveredIndex, setHoveredIndex] = useState(null);
-
-//   const menuItems = [
-//     {
-//       title: "Product of Zoha Homeo Hall",
-//       dropdown: [
-//         "Option 1",
-//         "Option 2",
-//         "Option 3",
-//         "Option 4",
-//         "Option 5",
-//         "Option 6",
-//       ],
-//     },
-//     {
-//       title: "DILUTIONS & POTENCIES",
-//       dropdown: [
-//         "Regular Biochemic",
-//         "Biochemic Combination",
-//         "Biochemics (Sealed Pack)",
-//       ],
-//     },
-//     {
-//       title: "MOTHERTINCTURES",
-//       dropdown: ["Option 1", "Option 2", "Option 3", "Option 4"],
-//     },
-//     {
-//       title: "BIOCHEMICS",
-//       dropdown: [
-//         "Regular Biochemic",
-//         "Biochemic Combination",
-//         "Biochemics (Sealed Pack)",
-//       ],
-//     },
-//     {
-//       title: "SPECIAL ITEMS",
-//       dropdown: ["Option 1", "Option 2", "Option 3", "Option 4"],
-//     },
-//     {
-//       title: "PRODUCTS",
-//       dropdown: ["Option 1", "Option 2", "Option 3", "Option 4"],
-//     },
-//     {
-//       title: "DOCTOR'S DIARY",
-//       dropdown: ["Option 1", "Option 2", "Option 3", "Option 4"],
-//     },
-//   ];
-
-//   return (
-//     <div className="relative flex justify-center bg-gray-100 border-b w-full max-w-screen-xl mx-auto">
-//       {menuItems.map((item, index) => (
-//         <div
-//           key={index}
-//           className="relative px-4 py-2 border-l-2 border-r-2 cursor-pointer text-gray-700 hover:bg-primary hover:text-white"
-//           onMouseEnter={() => setHoveredIndex(index)}
-//           onMouseLeave={() => setHoveredIndex(null)}
-//         >
-//           <span className="font-semibold" title={item.title}>
-//             {item.title}
-//           </span>
-//           {hoveredIndex === index && (
-//             <ul className="absolute left-0 top-full mt-0 bg-white shadow-md border-t w-full  z-50 flex flex-wrap p-4">
-//               {item.dropdown.map((option, idx) => (
-//                 <li
-//                   key={idx}
-//                   className="w-full px-4 py-2 hover:bg-gray-200 cursor-pointer text-primary"
-//                 >
-//                   {option}
-//                 </li>
-//               ))}
-//             </ul>
-//           )}
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Navbar;
+import { useState } from "react";
 
 const Navbar = () => {
+  const [dropdown, setDropdown] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setDropdown(index);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdown(null);
+  };
+
   return (
     <nav className="bg-gray-100 border-b border-gray-200">
-      <div className=" flex justify-center">
+      <div className="container mx-auto flex justify-center">
         <ul className="flex divide-x divide-slate-300">
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3  cursor-pointer">
-            ZOHA HOMEO HALL
-          </li>
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3 cursor-pointer">
-            DILUTIONS & POTENCIES
-          </li>
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3  cursor-pointer">
-            MOTHERTINCTURES
-          </li>
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3  cursor-pointer">
-            BIOCHEMICS
-          </li>
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3  cursor-pointer">
-            SPECIAL ITEMS
-          </li>
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3  cursor-pointer">
-            PRODUCTS
-          </li>
-          <li className="text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3  cursor-pointer">
-            DOCTOR'S DIARY
-          </li>
+          {[
+            "ZOHA HOMEO HALL",
+            "DILUTIONS & POTENCIES",
+            "MOTHERTINCTURES",
+            "BIOCHEMICS",
+            "SPECIAL ITEMS",
+            "PRODUCTS",
+            "DOCTOR'S DIARY",
+          ].map((menu, index) => (
+            <li
+              key={index}
+              className="relative text-gray-700 font-semibold hover:text-white hover:bg-black py-3 px-3 cursor-pointer"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {menu}
+              {dropdown === index && (
+                <div className="absolute left-0 top-full w-full bg-white shadow-lg border-t border-gray-200 -z-80">
+                  <div className="container mx-auto py-4 px-6 z-50">
+                    <p className="text-gray-700 ">
+                      Dropdown content for {menu}
+                    </p>
+                    <p className="text-gray-700 ">
+                      Dropdown content for {menu}
+                    </p>
+                    <p className="text-gray-700 ">
+                      Dropdown content for {menu}
+                    </p>
+                    {/* Add more dropdown items here */}
+                    <p>kkkkkkkkkkkkkkkkkW</p>
+                    <ul>
+                      <li>kkkkkkkkk</li>
+                      <li>ppppppppppp</li>
+                    </ul>
+                    <ul>
+                      <li>jjjjjjjjjj</li>
+                      <li>ddddddddddd</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
