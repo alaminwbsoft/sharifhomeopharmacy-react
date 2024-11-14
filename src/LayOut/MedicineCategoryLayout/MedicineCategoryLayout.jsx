@@ -12,6 +12,7 @@ import { FaList } from "react-icons/fa";
 import SubCategoryCard from "../../Components/ProductCards/SubCategoryCard";
 import GridviewCard from "../../Components/ProductCards/GridviewCard";
 import ListViewCard from "../../Components/ProductCards/ListViewCard";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 function MedicineCategoryLayout() {
   const navigate = useNavigate();
@@ -145,8 +146,8 @@ function MedicineCategoryLayout() {
   ];
 
   // --------------- grid view or list view ----
-  const [gridView, setGridView] = useState(false);
-  const [listView, setListView] = useState(true);
+  const [gridView, setGridView] = useState(true);
+  const [listView, setListView] = useState(false);
 
   const handleGridView = () => {
     setGridView(true);
@@ -157,6 +158,25 @@ function MedicineCategoryLayout() {
     setGridView(false);
     setListView(true);
   };
+
+  // --------------pagination -----------
+  const totalData = dummyProducts.length;
+  const itemsPerPage = 6;
+  // const pages = floor(totalData / itemsPerPage) + (totalData % itemsPerPage);
+
+  // console.log(pages);
+  const pages = 3;
+
+  // -------------- sort options --------------
+  const sortOptions = [
+    { value: "Price: Lowest first", label: "Price: Lowest first" },
+    { value: "Price: Highest first", label: "Price: Highest first" },
+    { value: "Product Name: A to Z", label: "Product Name: A to Z" },
+    { value: "Product Name: Z to A", label: "Product Name: Z to A" },
+    { value: "In Stock", label: "In Stock" },
+    { value: "Reference: Lowest First", label: "Reference: Lowest First" },
+    { value: "Reference: Highest First", label: "Reference: Highest First" },
+  ];
 
   return (
     <div className="my-5 mx-auto lg:flex justify-center min-h-screen">
@@ -565,8 +585,13 @@ function MedicineCategoryLayout() {
 
           {/* ----------------------------- sorting and Viewing (grid / list) -------- */}
           <div className="flex justify-between items-center my-8">
-            <div>sort by and show</div>
-            <div className="flex items-center justify-between gap-3">
+            <div>
+              <div>
+                <Select options={sortOptions} />
+              </div>
+              <div>show</div>
+            </div>
+            <div className="hidden lg:flex items-center justify-between gap-3 ">
               <div>view:</div>
               <BiSolidGridAlt
                 className={`cursor-pointer hover:text-gray-500 ${
@@ -586,12 +611,37 @@ function MedicineCategoryLayout() {
           {/* ---------------------------- viewing info list -------------------- */}
           <div className="my-8">
             <hr />
-            <div className="flex justify-evenly items-center">
-              <div>showing 1-12 of 502 items</div>
-              <div>pagination</div>
-              <div>
-                <button>show all</button>
-                <button>Compare(0)</button>
+            <div className="flex flex-col-reverse lg:flex-row lg:justify-evenly lg:items-center">
+              <div className="">showing 1-12 of 502 items</div>
+              <div className="flex justify-center gap-10 my-2">
+                {/* ------ pagination ----- */}
+                <div className="flex justify-center items-center gap-1">
+                  <div className="">
+                    <div className="w-8 h-8 rounded-sm border-2 border-gray-400 flex justify-center items-center ">
+                      <MdKeyboardArrowLeft className="text-2xl text-secondary" />
+                    </div>
+                  </div>
+                  <div className="">
+                    <div className=" w-8 h-8 rounded-sm border-2 border-gray-400 ">
+                      1
+                    </div>
+                  </div>
+                  <div className=" text-center">
+                    <div className="w-8 h-8 rounded-sm border-2 border-gray-400 flex justify-center items-center ">
+                      <MdKeyboardArrowRight className="text-2xl text-secondary" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button className="bg-customGray-100 px-2 py-1 border-2 rounded-sm border-gray-600 hover:bg-customGray-300">
+                    show all
+                  </button>
+                </div>
+              </div>
+              <div className="my-2">
+                <button className="py-3 px-6 rounded border border-green-900 bg-green-400">
+                  Compare(0)
+                </button>
               </div>
             </div>
             <hr />
