@@ -14,9 +14,7 @@ import GridviewCard from "../../Components/ProductCards/GridviewCard";
 import ListViewCard from "../../Components/ProductCards/ListViewCard";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Select from "react-select/base";
-import makeAnimated from "react-select/animated";
-
-const animatedComponents = makeAnimated();
+import DropDown from "../../Components/DropDown/DropDown";
 
 function MedicineCategoryLayout() {
   const navigate = useNavigate();
@@ -182,11 +180,11 @@ function MedicineCategoryLayout() {
     { value: "Reference: Highest First", label: "Reference: Highest First" },
   ];
 
-  const [selectedOption, setSelectedOption] = useState("--");
-
-  const handleSelectChange = (selectedOption) => {
-    setSelectedOption(selectedOption);
-  };
+  const showOptions = [
+    { value: "12", label: "12" },
+    { value: "24", label: "24" },
+    { value: "60", label: "60" },
+  ];
 
   return (
     <div className="my-5 mx-auto lg:flex justify-center min-h-screen">
@@ -595,16 +593,17 @@ function MedicineCategoryLayout() {
 
           {/* ----------------------------- sorting and Viewing (grid / list) -------- */}
           <div className="flex justify-between items-center my-8">
-            <div>
-              <div>
-                <Select
-                  options={data} // Pass options array
-                  components={animatedComponents}
-                  onChange={handleSelectChange} // Handle selection
-                  placeholder={selectedOption}
-                />
+            <div className="flex gap-2">
+              <div className="w-80 flex gap-2 items-center">
+                <div className="text-sm text-primary font-medium text-nowrap">
+                  Sort by:
+                </div>
+                <DropDown data={sortOptions} defaultText={"--"}></DropDown>
               </div>
-              <div>show</div>
+              <div className="flex items-center">
+                <div className="text-sm text-primary font-medium">show:</div>{" "}
+                <DropDown data={showOptions} defaultText={"12"}></DropDown>
+              </div>
             </div>
             <div className="hidden lg:flex items-center justify-between gap-3 ">
               <div>view:</div>
@@ -626,8 +625,10 @@ function MedicineCategoryLayout() {
           {/* ---------------------------- viewing info list -------------------- */}
           <div className="my-8">
             <hr />
-            <div className="flex flex-col-reverse lg:flex-row lg:justify-evenly lg:items-center">
-              <div className="">showing 1-12 of 502 items</div>
+            <div className="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
+              <div className="font-normal text-sm text-gray-600">
+                showing 1-12 of 502 items
+              </div>
               <div className="flex justify-center gap-10 my-2">
                 {/* ------ pagination ----- */}
                 <div className="flex justify-center items-center gap-1">
