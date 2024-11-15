@@ -4,7 +4,7 @@ import TopNav from "../TopNav/TopNav";
 
 const Header = () => {
   return (
-    <div>
+    <div className="max-w-screen-2xl container mx-auto">
       <TopBanner />
       <Topbar />
       <TopNav />
