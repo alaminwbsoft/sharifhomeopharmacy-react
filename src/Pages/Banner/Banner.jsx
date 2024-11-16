@@ -7,6 +7,7 @@ import banner1 from "../../assets/banner1.png";
 import banner2 from "../../assets/banner2.png";
 import banner3 from "../../assets/banner3.jpg";
 import cardPhoto from "../../assets/cardPhoto.png";
+import bannerCard from "../../assets/bannerCard.png";
 
 const Banner = () => {
   const images = [banner1, banner2, banner3];
@@ -24,16 +25,16 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-6">
+    <div className="flex flex-col md:flex-row  md:h-auto items-center gap-6">
       {/* Slider Section */}
-      <div className="relative w-full md:w-3/4 h-[620px]">
+      <div className="relative w-full md:w-2/3 md:h-auto">
         <Slider {...settings}>
           {images.map((image, index) => (
             <div key={index}>
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-[620px] object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
@@ -41,13 +42,12 @@ const Banner = () => {
       </div>
 
       {/* Card Section */}
-      <div className="w-full md:w-1/4 h-[620px] flex items-center">
+      <div className="w-1/3 h-auto">
         <div className="bg-gray-200 rounded shadow-md w-full h-full flex flex-col justify-between">
           <div className="bg-gray-400 py-2 rounded-t-md text-center">
             <p className="text-white text-2xl font-bold">Our Consultant</p>
           </div>
-
-          <div className="flex justify-center space-x-6 items-center px-4">
+          <div className="flex justify-center space-x-6 items-center px-4 mt-14">
             <div className="border-2 border-gray-400 p-1 rounded-md">
               <img
                 src={cardPhoto}
@@ -67,7 +67,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="bg-gray-300 p-4 mx-4 mt-4 rounded-3xl text-center">
+          <div className="bg-gray-300 p-4 mx-4 mt-16 rounded-3xl text-center">
             <p className="text-gray-700 text-sm font-semibold">
               Dr. Taleb, an experienced homeopathy doctor & specialized in
               medicine. He has done his BHMS (Bachelor of Homeopathy Medicine &

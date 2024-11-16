@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { FiPlus, FiMinus } from "react-icons/fi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // For mobile menu toggle
@@ -65,7 +67,7 @@ const Navbar = () => {
         <div className="flex items-center hover:bg-primary hover:text-white  justify-between px-4 py-2 md:py-0 md:justify-center">
           <span className="font-bold text-lg  block md:hidden">MENU</span>
           <button className="font-bold text-xl md:hidden" onClick={toggleMenu}>
-            {menuOpen ? "-" : "+"}
+            {menuOpen ? <FaMinus /> : <FaPlus />}
           </button>
         </div>
 
@@ -115,7 +117,7 @@ const Navbar = () => {
                     <span>{menu.title}</span>
                     {menu.subcategories && (
                       <span className="font-bold">
-                        {activeIndex === index ? "-" : "+"}
+                        {activeIndex === index ? <FiMinus /> : <FiPlus />}
                       </span>
                     )}
                   </div>
