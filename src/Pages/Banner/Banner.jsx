@@ -24,7 +24,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row  md:h-auto items-center gap-6">
+    <div className="flex flex-col md:flex-row lg:flex-row md:h-auto items-center gap-4">
       {/* Slider Section */}
       <div className="relative w-full md:w-2/3 md:h-auto">
         <Slider {...settings}>
@@ -41,12 +41,12 @@ const Banner = () => {
       </div>
 
       {/* Card Section */}
-      <div className="w-full md:w-1/3 h-auto">
+      <div className="w-full md:w-1/3 md:h-auto">
         <div className="bg-gray-200 rounded shadow-md w-full h-full flex flex-col justify-between">
-          <div className="bg-gray-400 py-2 rounded-t-md text-center">
+          <div className="bg-gray-400 py-2 mb-3 rounded-t-md text-center">
             <p className="text-white text-2xl font-bold">Our Consultant</p>
           </div>
-          <div className="flex justify-center space-x-6 items-center px-4 mt-14">
+          <div className="flex justify-center space-x-6 items-center px-4 mt-7 mb-5">
             <div className="border-2 border-gray-400 p-1 rounded-md">
               <img
                 src={cardPhoto}
@@ -66,7 +66,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="bg-gray-300 p-4 mx-4 mt-16 rounded-3xl text-center">
+          <div className="bg-gray-300 p-4 mx-4 mt-5 mb-1 rounded-3xl text-center border">
             <p className="text-gray-700 text-sm font-semibold">
               Dr. Taleb, an experienced homeopathy doctor & specialized in
               medicine. He has done his BHMS (Bachelor of Homeopathy Medicine &
@@ -77,7 +77,7 @@ const Banner = () => {
             </p>
           </div>
 
-          <div className="flex justify-center items-center text-center bg-gray-500 py-2 rounded-b-md">
+          <div className="flex justify-center items-center text-center bg-gray-500 py-3 mt-2 rounded-b-md">
             <p className="text-white text-sm font-bold mr-2">
               For Appointment:
             </p>

@@ -84,17 +84,17 @@ const Footer = () => {
       </div>
 
       {/* footer input mail section */}
-      <div className="flex flex-col md:flex-row items-center md:justify-between bg-slate-500">
+      <div className="flex flex-col md:flex-row items-center md:justify-between bg-slate-700">
         <div className="flex flex-col md:flex-row items-center space-x-4 py-3 px-3 text-primary">
           <span className="text-xl text-white">Newsletter</span>
           <div className="flex items-center border border-gray-300 rounded-md p-2 bg-slate-200">
             <input
               type="email"
               placeholder="Enter your Mail"
-              className="outline-none flex-grow text-gray-700 bg-slate-100"
+              className="outline-none flex-grow text-gray-700 bg-slate-200"
             />
             <a href="#">
-              <IoIosArrowForward className="text-red text-white mr-2 rounded-full border bg-gray-500 w-6 h-6" />
+              <IoIosArrowForward className="text-red text-white mr-2 rounded-full border bg-gray-500 hover:bg-gray-400 hover:text-gray-700 w-6 h-6" />
             </a>
           </div>
         </div>

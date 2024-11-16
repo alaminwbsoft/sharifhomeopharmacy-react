@@ -1,8 +1,8 @@
 import { useState } from "react";
-import NewArrivals from "../Home/HomePageCard/NewArrivals"; // Import your NewArrivals component
-import Popular from "../Home/HomePageCard/Popular"; // Placeholder for Popular component
-import Special from "../Home/HomePageCard/Special"; // Placeholder for Special component
-import BestSeller from "../Home/HomePageCard/BestSeller"; // Placeholder for BestSeller component
+import NewArrivals from "../Home/HomePageCard/NewArrivals";
+import Popular from "../Home/HomePageCard/Popular";
+import Special from "../Home/HomePageCard/Special";
+import BestSeller from "../Home/HomePageCard/BestSeller";
 
 const Navbar2 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
