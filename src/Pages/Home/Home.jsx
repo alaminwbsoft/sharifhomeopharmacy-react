@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="mt-6">
+      <div className="mt-4">
         <Banner></Banner>
       </div>
-      <div className="mt-6">
+      <div className="mt-4">
         <Navbar2 />
         <NewArrivals />
       </div>

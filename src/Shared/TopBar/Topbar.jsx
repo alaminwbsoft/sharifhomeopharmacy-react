@@ -12,15 +12,18 @@ const Topbar = () => {
         </p>
       </div>
 
-      <div className="flex items-end md:items-center md:space-x-2">
+      <div className="flex justify-end items-end md:items-center divide-x divide-white">
+        {/* Contact Us Button */}
         <div className="flex items-end h-full">
           <Link to="/contact">
-            <button className="px-2 py-2 border-l border-r border-white h-full hover:bg-gray-700 hover:border-gray-500 transition duration-200">
+            <button className="px-2 py-2 border-l border-white h-full hover:bg-gray-700 hover:border-gray-500 transition duration-200">
               Contact us
             </button>
           </Link>
         </div>
-        <div className="flex items-end h-full pr-1">
+
+        {/* Sign In Button */}
+        <div className="flex items-end h-full">
           <Link to="/signIn">
             <button className="px-2 py-2 border-r border-white h-full hover:bg-gray-700 hover:border-gray-500 transition duration-200">
               Sign In
