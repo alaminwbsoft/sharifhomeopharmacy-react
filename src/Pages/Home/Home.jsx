@@ -1,7 +1,6 @@
 import Navbar from "../../Shared/Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import Navbar2 from "../Navbar2/Navbar2";
-import NewArrivals from "./HomePageCard/NewArrivals";
 
 const Home = () => {
   return (
@@ -12,7 +11,6 @@ const Home = () => {
       </div>
       <div className="mt-4">
         <Navbar2 />
-        <NewArrivals />
       </div>
     </div>
   );

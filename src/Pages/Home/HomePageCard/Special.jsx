@@ -1,74 +1,74 @@
 import React from "react";
-import homeCard1 from "../../../assets/homeCardImg/homeCardP1.jpg";
+import SpecialImg from "../../../assets/homeCardImg/Special.jpg";
 
 const productData = [
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: SpecialImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "SPECIAL",
   },
 ];
 
-const NewArrivals = () => {
+const Special = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-2">
       {productData.map((product) => (
@@ -139,4 +139,4 @@ const NewArrivals = () => {
   );
 };
 
-export default NewArrivals;
+export default Special;

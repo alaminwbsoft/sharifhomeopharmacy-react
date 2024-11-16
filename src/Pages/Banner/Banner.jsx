@@ -13,7 +13,6 @@ const Banner = () => {
   const images = [banner1, banner2, banner3];
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

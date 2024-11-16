@@ -1,74 +1,72 @@
 import React from "react";
-import homeCard1 from "../../../assets/homeCardImg/homeCardP1.jpg";
-
+import PopularCardImg from "../../../assets/homeCardImg/PopularCardImg.jpeg";
 const productData = [
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 1,
     title: "Dr. Reckeweg Borax 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 450,
     originalPrice: 520,
-    badge: "NEW",
+    badge: "POPULAR",
   },
   {
     id: 2,
     title: "Dr. Reckeweg Nux Vomica 3X",
-    image: homeCard1,
+    image: PopularCardImg,
     price: 460,
     originalPrice: 530,
-    badge: "NEW",
+    badge: "POPULAR",
   },
 ];
-
-const NewArrivals = () => {
+const Popular = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-2">
       {productData.map((product) => (
@@ -139,4 +137,4 @@ const NewArrivals = () => {
   );
 };
 
-export default NewArrivals;
+export default Popular;
