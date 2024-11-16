@@ -17,14 +17,16 @@ const Navbar2 = () => {
   };
 
   return (
-    <div className="flex flex-1 md:flex justify-start">
-      <ul className="flex divide-x divide-slate-400">
+    <div className="flex flex-col md:flex-row justify-start">
+      <ul className="flex flex-col md:flex-row divide-x divide-slate-400">
         {menuItems.map((menu, index) => (
           <button
             key={index}
             onClick={() => handleNavigation(index)}
             className={`px-4 py-2 font-semibold ${
-              activeIndex === index ? "bg-blue-700 text-white" : "bg-black text-white"
+              activeIndex === index
+                ? "bg-blue-700 text-white"
+                : "bg-black text-white"
             }`}
           >
             <li>{menu.title}</li>

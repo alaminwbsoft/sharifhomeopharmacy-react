@@ -42,7 +42,7 @@ const Banner = () => {
       </div>
 
       {/* Card Section */}
-      <div className="w-1/3 h-auto">
+      <div className="w-full md:w-1/3 h-auto">
         <div className="bg-gray-200 rounded shadow-md w-full h-full flex flex-col justify-between">
           <div className="bg-gray-400 py-2 rounded-t-md text-center">
             <p className="text-white text-2xl font-bold">Our Consultant</p>
