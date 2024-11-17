@@ -3,8 +3,13 @@ import { IoCall } from "react-icons/io5";
 import { FaTruck } from "react-icons/fa6";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa6";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { FiMail } from "react-icons/fi";
+import reinsurance from "../../assets/FooterIMG/reinsurance-4-1.jpg";
+import footerImugi from "../../assets/FooterIMG/footerImugi.jpg";
 
+import footerImg from "../../assets/FooterIMG/footerImg.png";
 const Footer = () => {
   return (
     <>
@@ -98,7 +103,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center space-x-4 py-3 px-3 text-primary">
+        <div className="flex flex-col items-center md:flex-row md:items-center space-x-4 py-3 px-3 text-primary">
           <span className="flex items-center text-white text-xl ">
             Follow us
           </span>
@@ -113,6 +118,107 @@ const Footer = () => {
               <FaTwitter className="hover:text-white h-6 w-6" />
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* ............footer....of...communication...... */}
+      <div className="container mx-auto px-2 py-2 flex items-center flex-col md:flex-row lg:flex-row bg-gray-800">
+        <div className="container mx-auto flex flex-col items-center md:flex-row lg:flex-row md:space-x-10 w-1/2">
+          <div>
+            <h1 className="text-2xl mb-1 text-white">Categories</h1>
+            <p>
+              <a href="#">DILUTIONS & POTENCIES</a>
+            </p>
+            <p>
+              {" "}
+              <a href="#">MOTHERTINCTURES</a>
+            </p>
+            <p>
+              <a href="#">BIOCHEMICS</a>
+            </p>
+            <p>
+              {" "}
+              <a href="#">SPECIAL ITEMS</a>
+            </p>
+            <p>
+              {" "}
+              <a href="#">PRODUCTS</a>
+            </p>
+          </div>
+          <div>
+            <h1 className="text-2xl mb-1 text-white">My account</h1>
+            <p>
+              <a href="#">My orders</a>
+            </p>
+            <p>
+              <a href="#">My merchandise returns</a>
+            </p>
+            <p>
+              <a href="#">My credit slips</a>
+            </p>
+            <p>
+              <a href="#">My addresses</a>
+            </p>
+            <p>
+              {" "}
+              <a href="#">My personal info</a>
+            </p>
+          </div>
+        </div>
+        <div className="w-1/2 border-l-2 pl-3">
+          <h1 className="text-2xl mb-1 text-white">Store Information</h1>
+          <div className="flex items-center space-x-2">
+            <FaMapMarkerAlt />
+            <p>Zoha Homeo Hall 25/2, Joy Kali Mandir Road, Wari, Dhaka 1203</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <IoCall />
+            <p>Call us now: 09639-146636 [096391-HOMEO]</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <FiMail />
+            <p>Email: sharifhomeopharmacy@gmail.com</p>
+          </div>
+        </div>
+        <img src={footerImg} alt="footerImg" />
+      </div>
+      {/* last section of footer */}
+      <div className="grid grid-cols-1  md:grid col-span-4 lg:grid-cols-7 bg-gray-200 px-2 py-2">
+        <div>
+          <img src={footerImugi} alt="reinsurance" />
+          <p>
+            Always happy <br /> to Serve
+          </p>
+        </div>
+        <div>
+          <img src={reinsurance} alt="reinsurance" />
+          <p>
+            64 District <br /> Door to Door <br /> Shipping.
+          </p>
+        </div>
+        <div>
+          <img src={footerImugi} alt="reinsurance" />
+          <p>
+            Always happy <br /> to Serve
+          </p>
+        </div>
+        <div>
+          <img src={reinsurance} alt="reinsurance" />
+          <p>
+            64 District <br /> Door to Door <br /> Shipping.
+          </p>
+        </div>
+        <div>
+          <img src={footerImugi} alt="reinsurance" />
+          <p>
+            Always happy <br /> to Serve
+          </p>
+        </div>
+        <div>
+          <img src={reinsurance} alt="reinsurance" />
+          <p>
+            64 District <br /> Door to Door <br /> Shipping.
+          </p>
         </div>
       </div>
     </>

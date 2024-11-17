@@ -7,7 +7,7 @@ import banner1 from "../../assets/banner1.png";
 import banner2 from "../../assets/banner2.png";
 import banner3 from "../../assets/banner3.jpg";
 import cardPhoto from "../../assets/cardPhoto.png";
-import bannerCard from "../../assets/bannerCard.png";
+// import bannerCard from "../../assets/bannerCard.png";
 
 const Banner = () => {
   const images = [banner1, banner2, banner3];
