@@ -6,6 +6,7 @@ import DilutionsAndPotency from "../Pages/Medicine-Category-Dilutions-and-Potenc
 import MedicineCategoryLayout from "../LayOut/MedicineCategoryLayout/MedicineCategoryLayout";
 import NewArrivals from "../Pages/Home/HomePageCard/NewArrivals";
 import Navbar2 from "../Pages/Navbar2/Navbar2";
+import DilutionRegular from "../Pages/Medicine-Category-Dilutions-and-Potencies/Dilution-Regular/DilutionRegular";
 
 const Router = createBrowserRouter([
   {
