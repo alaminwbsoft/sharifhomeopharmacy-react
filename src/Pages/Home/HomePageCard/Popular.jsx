@@ -75,7 +75,7 @@ const Popular = () => {
           className="w-full h-[380px] border rounded-md bg-white shadow-md relative group overflow-hidden"
         >
           {/* Badge */}
-          <div className="absolute -top-2 -left-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
+          <div className="absolute -top-0 -left-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
             {product.badge}
           </div>
 

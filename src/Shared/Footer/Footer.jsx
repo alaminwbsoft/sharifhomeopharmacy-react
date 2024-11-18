@@ -34,7 +34,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row items-center space-x-7 text-primary mb-3">
+          <div className="flex flex-col md:flex-row items-center space-x-7 text-gray-700 mb-3">
             <IoCall className="w-14 h-14 rounded-full text-white bg-slate-500 p-3" />
             <div>
               <h1 className="text-2xl text-primary">Order via Phone Call</h1>
@@ -44,7 +44,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row items-center space-x-7 text-primary mb-3">
+          <div className="flex flex-col md:flex-row items-center space-x-7 text-gray-700 mb-3">
             <MdOutlinePayment className="w-14 h-14 rounded-full text-white bg-slate-500 p-3" />
 
             <div>
@@ -183,7 +183,7 @@ const Footer = () => {
         <img src={footerImg} alt="footerImg" />
       </div>
       {/* last section of footer */}
-      <div className="grid grid-cols-1  md:grid col-span-4 lg:grid-cols-7 bg-gray-200 px-2 py-2">
+      <div className="grid grid-cols-1  md:grid col-span-4 lg:grid-cols-7 bg-slate-200 text-gray-700 px-2 py-2">
         <div>
           <img src={footerImugi} alt="reinsurance" />
           <p>
