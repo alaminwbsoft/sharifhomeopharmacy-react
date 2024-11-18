@@ -38,6 +38,10 @@ const Router = createBrowserRouter([
             path: "/medicineCategory/dilutions",
             element: <DilutionsAndPotency />,
           },
+          {
+            path: "/medicineCategory/dilReg",
+            element: <DilutionRegular />,
+          },
         ],
       },
     ],

@@ -1,20 +1,17 @@
-import React from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import HorizontalLine from "../../Components/HorizontalLine/HorizontalLine";
-import DropdownButton from "./DropDownBtn/DropDownButton";
 import { GoHome } from "react-icons/go";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import p1 from "../../assets/p1.jpg";
-import p2 from "../../assets/p2.jpg";
-import p3 from "../../assets/p3.jpg";
-import p4 from "../../assets/p4.jpg";
-import p5 from "../../assets/p5.jpg";
-import p6 from "../../assets/p6.jpg";
-import p7 from "../../assets/p7.jpg";
-import p8 from "../../assets/p8.jpg";
 import MiniProductHorizontalCard from "../../Components/ProductCards/MiniProductHorizontalCard";
 import store from "../../assets/store.png";
 import Collapse from "./Collapse/Collapse";
+import BreadCrumb from "../../Components/BreadCrumb/BreadCrumb";
+import { BiSolidGridAlt } from "react-icons/bi";
+import { FaList } from "react-icons/fa";
+import SubCategoryCard from "../../Components/ProductCards/SubCategoryCard";
+import GridviewCard from "../../Components/ProductCards/GridviewCard";
+import ListViewCard from "../../Components/ProductCards/ListViewCard";
 
 function MedicineCategoryLayout() {
   const navigate = useNavigate();
@@ -41,7 +38,7 @@ function MedicineCategoryLayout() {
       description:
         "Ginkgo Biloba Mother Tincture is a homeopathic formulation that helps to improve the concentration, improves mental alertness, elevates mood and restores energy. It is very effective for improving symptoms of anxiety, cognitive function, dementia, and diabetic retinopathy.",
       KeyIngredients: "Ginkgo Biloba (leaves)",
-      status: "available",
+      status: "stock out",
       price: "450BDT",
     },
     {
@@ -118,6 +115,49 @@ function MedicineCategoryLayout() {
     },
   ];
 
+  const dummySubCat = [
+    {
+      title: "REGULAR MEDICINE",
+      image: "/src/assets/p8.jpg",
+    },
+    {
+      title: "COMBINATIONS",
+      image: "/src/assets/p7.jpg",
+    },
+    {
+      title: "DILUTION POTENCY",
+      image: "/src/assets/p8.jpg",
+    },
+  ];
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+  console.log(currentPath);
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/", isCurrent: false },
+    {
+      label: "Dilutions & Potions",
+      href: "/medicineCategory/dilutions",
+      isCurrent: false,
+    },
+    { label: "Regular", href: "/medicineCategory/dilReg", isCurrent: false },
+  ];
+
+  // --------------- grid view or list view ----
+  const [gridView, setGridView] = useState(false);
+  const [listView, setListView] = useState(true);
+
+  const handleGridView = () => {
+    setGridView(true);
+    setListView(false);
+  };
+
+  const handleListView = () => {
+    setGridView(false);
+    setListView(true);
+  };
+
   return (
     <div className="my-5 mx-auto lg:flex justify-center min-h-screen">
       {/* -------------------------------------------------------------------------------- side bar ------------ */}
@@ -131,6 +171,7 @@ function MedicineCategoryLayout() {
             >
               <GoHome className="text-xl" />
             </button>
+            <BreadCrumb items={breadcrumbItems} />
           </div>
           {/* <div>
             <button>google icon prefered language</button>
@@ -490,8 +531,93 @@ function MedicineCategoryLayout() {
         </div>
       </div>
 
-      {/* ----------------- main content area ------------ */}
       <div className="lg:w-[70%]">
+        {/* ----------------------------- medicine sub category header ---------------------------- */}
+        <div className="lg:m-2">
+          {/* ------------------------ first section top banner with line at top ------------- */}
+          <div>
+            <HorizontalLine />
+            {/* <img src={dilutionsBanner} alt="medicine image" /> */}
+          </div>
+
+          {/* ------------------------ second section page title ------------------ */}
+          <div className="lg:flex-col lg:items-center lg:justify-start ">
+            <div className="text-secondary/75 font-semibold mt-7 text-xl">
+              DILUTIONS & POTENCIES
+            </div>
+            <div className="text-secondary/75 font-medium text-sm">
+              (There are 502 products)
+            </div>
+            <hr className="my-5 border-secondary/60 border" />
+          </div>
+
+          {/* ----------------------------- subCategories --------------------------- */}
+          <div>
+            <div className="text-sm text-primary font-semibold text-start mb-3">
+              Subcategories
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-5 ">
+              {dummySubCat.map((card, index) => (
+                <SubCategoryCard key={index} card={card}></SubCategoryCard>
+              ))}
+            </div>
+          </div>
+
+          {/* ----------------------------- sorting and Viewing (grid / list) -------- */}
+          <div className="flex justify-between items-center my-8">
+            <div>sort by and show</div>
+            <div className="flex items-center justify-between gap-3">
+              <div>view:</div>
+              <BiSolidGridAlt
+                className={`cursor-pointer hover:text-gray-500 ${
+                  gridView ? "text-3xl text-primary" : "text-2xl text-gray-300"
+                }`}
+                onClick={handleGridView}
+              />
+              <FaList
+                className={`cursor-pointer hover:text-gray-500 ${
+                  listView ? "text-3xl text-primary" : "text-2xl text-gray-300"
+                }`}
+                onClick={handleListView}
+              />
+            </div>
+          </div>
+
+          {/* ---------------------------- viewing info list -------------------- */}
+          <div className="my-8">
+            <hr />
+            <div className="flex justify-evenly items-center">
+              <div>showing 1-12 of 502 items</div>
+              <div>pagination</div>
+              <div>
+                <button>show all</button>
+                <button>Compare(0)</button>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+
+        {/* ----------------------------------------------------------------------------------- main card contents here --------------------- */}
+
+        <div>
+          {gridView ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              {dummyProducts.map((product, index) => (
+                <GridviewCard key={index} product={product}></GridviewCard>
+              ))}
+            </div>
+          ) : (
+            dummyProducts.map((product, index) => (
+              <div key={index}>
+                <ListViewCard product={product}></ListViewCard>
+              </div>
+            ))
+          )}
+        </div>
+
+        <div>{}</div>
+
         <Outlet />
       </div>
     </div>
