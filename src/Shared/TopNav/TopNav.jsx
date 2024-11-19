@@ -44,23 +44,30 @@ const TopNav = () => {
 
       {/* Cart Section */}
       <div
-        className="flex  items-center bg-secondary  p-2 cursor-pointer relative mt-4  sm:mt-0"
+        className="flex items-center bg-secondary p-2 cursor-pointer relative mt-4 w-full sm:w-auto sm:mt-0"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <button className="flex items-center text-gray-700">
-          <FaShoppingCart className="text-white w-6 h-6" />
-          <span className="text-lg font-semibold text-white ml-2">Cart</span>
-          <span className="ml-1 text-sm text-gray-500 mr-16">(empty)</span>
-          {isHovered ? (
-            <IoCaretUpOutline
-              onClick={handleCartClick}
-              className="cursor-pointer text-gray-600"
-              title="View my shopping cart"
-            />
-          ) : (
-            <IoCaretDownOutline className="text-gray-600" />
-          )}
+        <button className="flex items-center justify-between w-full text-gray-700">
+          {/* Left Section: Cart Icon and Text */}
+          <div className="flex items-center">
+            <FaShoppingCart className="text-white w-6 h-6" />
+            <span className="text-lg font-semibold text-white ml-2">Cart</span>
+            <span className="ml-1 text-sm md:mr-16 text-gray-500">(empty)</span>
+          </div>
+
+          {/* Right Section: Caret Icon */}
+          <div>
+            {isHovered ? (
+              <IoCaretUpOutline
+                onClick={handleCartClick}
+                className="cursor-pointer text-gray-600"
+                title="View my shopping cart"
+              />
+            ) : (
+              <IoCaretDownOutline className="text-gray-600" />
+            )}
+          </div>
         </button>
       </div>
     </div>
