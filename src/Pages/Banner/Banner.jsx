@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,6 +7,7 @@ import banner1 from "../../assets/banner1.png";
 import banner2 from "../../assets/banner2.png";
 import banner3 from "../../assets/banner3.jpg";
 import cardPhoto from "../../assets/cardPhoto.png";
+import Slider from "react-slick";
 // import bannerCard from "../../assets/bannerCard.png";
 
 const Banner = () => {

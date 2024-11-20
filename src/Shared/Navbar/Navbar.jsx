@@ -188,12 +188,12 @@ const Navbar = () => {
             {menuItems.map((menu, index) => (
               <li
                 key={index}
-                className="px-4 py-3 text-primary hover:bg-primary hover:text-white font-medium cursor-pointer group"
+                className="px-4 py-3 text-primary hover:bg-primary hover:text-white font-medium cursor-pointer"
               >
                 {menu.title}
                 {/* Dropdown for desktop */}
                 {menu.dropdown?.length > 0 && (
-                  <div className="absolute left-0 w-full top-full bg-white shadow-md border-t border-gray-200 hidden group-hover:block z-50 transition-all duration-300 ease-in-out">
+                  <div className="absolute left-0 w-full top-full bg-white shadow-md border-t border-gray-200 hidden group-hover:block z-50 ">
                     <div className="container mx-auto py-4">
                       <div className="flex flex-row gap-16 pr-32 py-5">
                         {menu.dropdown.map((subItem, subIndex) => (

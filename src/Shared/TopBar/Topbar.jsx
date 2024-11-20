@@ -21,7 +21,6 @@ const Topbar = () => {
             </button>
           </Link>
         </div>
-
         {/* Sign In Button */}
         <div className="flex items-end h-full">
           <Link to="/signIn">

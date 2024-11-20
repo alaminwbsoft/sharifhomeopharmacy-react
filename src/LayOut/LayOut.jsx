@@ -5,7 +5,7 @@ import Header from "../Shared/Header/Header";
 const LayOut = () => {
   return (
     <div>
-      <div className="container mx-auto">
+      <div className=" max-w-full mx-auto">
         <Header />
         <Outlet />
         <Footer />
